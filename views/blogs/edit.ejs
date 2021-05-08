@@ -1,0 +1,32 @@
+<%- include('../partials/header'); -%>
+<%- include('../partials/navbar'); -%>
+
+
+<div class="container">
+    <div class="row mt-5 pt-5" style="margin:5px auto;">
+        <h1 class="text-center">Edit</h1>
+        <div class="col-lg-6 mt-5 myform">
+            <form  method="POST" action="/blogs/<%=editId._id%>?_method=PATCH" class="g-3 needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title:</label>
+                    <input type="text" class="form-control" id="title" name="title" value="<%=editId.title%>" required>
+                    <div class="valid-feedback"> Looks good! </div>
+                </div>
+                <div class="mb-3">
+                    <label for="img" class="form-label">Image Url:</label>
+                    <input type="text" class="form-control" value="<%=editId.img%>" id="img" name="img" required>
+                    <div class="valid-feedback"> Looks good! </div>
+                </div>
+                <div class="mb-3">
+                    <label for="desc" class="form-label">Description:</label>
+                    <textarea class="form-control" name="desc" rows="" cols="" required><%=editId.desc%></textarea>
+                    <div class="valid-feedback"> Looks good! </div>
+                </div>
+                <button class="btn btn-success">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<%- include('../partials/footer'); -%>

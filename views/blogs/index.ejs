@@ -1,0 +1,24 @@
+<%- include('../partials/header'); -%>
+<%- include('../partials/navbar'); -%>
+
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <% for(var x of bg){%>
+            <div class="col-lg-4">
+            
+                <div class="card p-3 m-4 mycards">
+                    <img src="<%=x.img%>" class="card-img-top" alt="Blogs_picture">
+                    <div class="card-body">
+                        <h5 class="card-title"><%=x.title%></h5>
+                        <p class="card-text"><%=x.desc.substr(0,60)%>...</p>
+                        <a href="/blogs/<%=x._id%>" class="btn btn-dark">Read More</a>
+                    </div>
+                </div>
+            
+            </div>
+        <%}%>
+    </div>
+    
+</div>
+    
+<%- include('../partials/footer'); -%>
